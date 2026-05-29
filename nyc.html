@@ -229,6 +229,22 @@
     .schedule-content .tag.booked {
       background: var(--color-electric-violet);
     }
+    .schedule-content .nearby {
+      margin-top: 6px;
+      padding: 6px 10px;
+      background: var(--color-cloud-canvas);
+      border-radius: 6px;
+      font-size: 11.5px;
+      color: var(--color-muted-ash);
+      font-style: italic;
+      line-height: 1.4;
+    }
+    .schedule-content .nearby::before {
+      content: '⏱ 시간되면 ';
+      font-style: normal;
+      font-weight: 600;
+      color: var(--color-electric-violet);
+    }
 
     .map-container {
       background: var(--color-paper-white);
@@ -333,15 +349,15 @@
         title: 'Midtown',
         sub: 'MoMA · Summit · 야경버스 · 230 Fifth',
         items: [
-          { time: '09:30', title: 'Ess-a-Bagel', desc: '뉴욕 정통 베이글 + 크림치즈. 줄 서는 곳.', latlng: [40.7596, -73.9685] },
+          { time: '09:30', title: 'Ess-a-Bagel', desc: '뉴욕 정통 베이글 + 크림치즈. 줄 서는 곳.', nearby: 'Carnegie Diner — 클래식 미국식 다이너 (다른 옵션)', latlng: [40.7596, -73.9685] },
           { time: '10:30', title: 'MoMA', desc: '현대미술관. 반 고흐 별이 빛나는 밤, 모네 수련.', star: true, latlng: [40.7614, -73.9776] },
-          { time: '13:00', title: 'Halal Guys', desc: '뉴욕 길거리 푸드트럭의 시초. 치킨 오버 라이스.', latlng: [40.7615, -73.9802] },
-          { time: '14:00', title: 'Summit One Vanderbilt', desc: '거울방 전망대. 낮 자연광이 가장 예쁨.', star: true, booked: '예매필요', latlng: [40.7530, -73.9777] },
-          { time: '17:00', title: '그랜드센트럴 · 브라이언트파크', desc: '천장벽화와 시계. 도서관 외관도 같이.', latlng: [40.7527, -73.9772] },
-          { time: '17:30', title: 'Magnolia Bakery', desc: 'Sex and the City 컵케이크. 바닐라 푸딩 인생.', latlng: [40.7589, -73.9845] },
-          { time: '18:30', title: "Ellen's Stardust Diner", desc: '노래하는 웨이터들이 라이브 공연하는 명물 다이너. 호텔 도보 5분.', latlng: [40.7607, -73.9836] },
+          { time: '13:00', title: 'Halal Guys', desc: '뉴욕 길거리 푸드트럭의 시초. 치킨 오버 라이스.', nearby: 'Don Antonio 피자 · Juice Generation 쥬스 · 달라스 바베큐', latlng: [40.7615, -73.9802] },
+          { time: '14:00', title: 'Summit One Vanderbilt', desc: '거울방 전망대. 낮 자연광이 가장 예쁨.', star: true, booked: '예매필요', nearby: 'Magnolia Bakery 컵케이크 (호텔 가는 길)', latlng: [40.7530, -73.9777] },
+          { time: '17:00', title: '호텔 (옷 갈아입기)', desc: '디너 전 호텔 잠깐.', latlng: [40.7589, -73.9847] },
+          { time: '17:30', title: "Gallagher's Steakhouse", desc: '1927년 오픈. dry-aging 통유리방. 호텔 도보 8분, 야경버스 픽업 도보 5분.', star: true, booked: '예약필요', latlng: [40.7613, -73.9818] },
           { time: '20:00', title: 'TopView 야경버스 (Live)', desc: '2층 오픈탑 더블데커. 브루클린 브릿지까지 1.5h.', star: true, booked: '예매필요', latlng: [40.7587, -73.9852] },
-          { time: '22:00', title: '230 Fifth 루프탑', desc: '엠파이어 정면 야경 보면서 칵테일.', latlng: [40.7437, -73.9874] },
+          { time: '22:00', title: '230 Fifth 루프탑', desc: '엠파이어 정면 야경 보면서 칵테일.', nearby: 'Shake Shack 본점 (매디슨스퀘어파크 옆)', latlng: [40.7437, -73.9874] },
+          { time: '23:30', title: '호텔 복귀', desc: '시차 첫날 마무리.', nearby: "Ellen's Stardust Diner — 노래하는 웨이터 야식 분위기 (호텔 도보)", latlng: [40.7589, -73.9847] },
         ]
       },
       {
@@ -351,10 +367,11 @@
         sub: '자유의여신상 → 라이온킹 → Top of Rock 야경',
         items: [
           { time: '09:00', title: '자유의여신상 + Pedestal', desc: 'Battery Park 출발. 페디스털 215계단. 9시 슬롯 고정.', star: true, booked: '✅예매완료', latlng: [40.7036, -74.0142] },
-          { time: '12:30', title: "Katz's Delicatessen", desc: '영화 해리가 샐리를 만났을때. 파스트라미 샌드위치.', latlng: [40.7223, -73.9874] },
-          { time: '14:00', title: "Joe's Pizza", desc: '뉴욕 슬라이스 피자의 전설. $5 클래식. 소호 산책과 함께.', latlng: [40.7305, -74.0023] },
-          { time: '15:30', title: 'Buvette (웨스트빌리지)', desc: '프랑스 비스트로·와인바. 캐주얼하게 한 잔.', latlng: [40.7330, -74.0038] },
-          { time: '16:30', title: 'LOS TACOS No.1 + 첼시마켓', desc: '첼시마켓 안 멕시칸 타코 성지. 같이 하이라인 산책.', latlng: [40.7425, -74.0060] },
+          { time: '11:30', title: 'Battery Park 복귀', desc: '페리에서 내려서 다음 코스로.', nearby: '9/11 메모리얼 외부 · Charging Bull · Wall Street', latlng: [40.7036, -74.0142] },
+          { time: '12:30', title: "Katz's Delicatessen", desc: '영화 해리가 샐리를 만났을때. 파스트라미 샌드위치.', nearby: "차이나타운 Joe's Shanghai 수프덤플링 · Jing Fong 딤섬", latlng: [40.7223, -73.9874] },
+          { time: '14:00', title: "Joe's Pizza", desc: '뉴욕 슬라이스 피자의 전설. $5 클래식. 소호 산책과 함께.', nearby: 'Prince Street Pizza · 소호 편집샵 거리', latlng: [40.7305, -74.0023] },
+          { time: '15:30', title: 'Buvette (웨스트빌리지)', desc: '프랑스 비스트로·와인바. 캐주얼하게 한 잔.', nearby: '워싱턴스퀘어파크 · Magnolia Bakery 본점', latlng: [40.7330, -74.0038] },
+          { time: '16:30', title: 'LOS TACOS No.1 + 첼시마켓', desc: '첼시마켓 안 멕시칸 타코 성지. 같이 하이라인 산책.', nearby: '리틀아일랜드 인공섬 공원', latlng: [40.7425, -74.0060] },
           { time: '18:00', title: '호텔 복귀', desc: '옷 갈아입기, 라이온킹 준비.', latlng: [40.7589, -73.9847] },
           { time: '19:00', title: '라이온킹 @ Minskoff', desc: '메자닌 Row C 118-119 (베스트 자리).', star: true, booked: '✅예매완료', latlng: [40.7585, -73.9852] },
           { time: '22:00', title: 'Top of the Rock 야경', desc: '엠파이어 정면 야경. 라이온킹 도보 5분.', star: true, booked: '예매필요', latlng: [40.7587, -73.9787] },
@@ -366,14 +383,14 @@
         title: 'Brooklyn · 스냅',
         sub: '신혼 스냅 → Peter Luger 디너',
         items: [
-          { time: '10:30', title: '호텔 근처 카페', desc: '늦은 아침. 여유롭게.', latlng: [40.7589, -73.9847] },
+          { time: '10:30', title: '호텔 근처 카페', desc: '늦은 아침. 여유롭게.', nearby: 'Magnolia 타임스퀘어점 · Carnegie Diner', latlng: [40.7589, -73.9847] },
           { time: '11:30', title: '미드타운 · 5번가 산책', desc: '브런치 겸 5번가·록펠러 산책.', latlng: [40.7580, -73.9787] },
           { time: '14:00', title: '지하철 → DUMBO', desc: 'F호선 York St역 하차. 30분.', latlng: [40.7012, -73.9866] },
-          { time: '14:30', title: 'DUMBO 도착', desc: '만하탄브릿지 인생샷 스팟 답사.', latlng: [40.7033, -73.9881] },
+          { time: '14:30', title: 'DUMBO 도착', desc: '만하탄브릿지 인생샷 스팟 답사.', nearby: 'Time Out Market 브루클린 분점 · 브루클린 브릿지 파크', latlng: [40.7033, -73.9881] },
           { time: '17:00', title: '신혼 스냅촬영', desc: '브루클린 브릿지·만하탄브릿지·강변. 골든아워.', star: true, booked: '예매필요', latlng: [40.7024, -73.9875] },
           { time: '19:45', title: '윌리엄스버그 이동', desc: '우버 15분. DUMBO → Williamsburg.', latlng: [40.7099, -73.9627] },
           { time: '20:00', title: 'Peter Luger 디너', desc: '3대 스테이크. 현금만! 카드 X. 인생 포터하우스.', star: true, booked: '6/18 예약!', latlng: [40.7099, -73.9627] },
-          { time: '22:30', title: '우버 호텔', desc: '브루클린 → 미드타운.', latlng: [40.7589, -73.9847] },
+          { time: '22:30', title: '우버 호텔', desc: '브루클린 → 미드타운.', nearby: "L'industrie 피자 한 조각 · Westlight 루프탑 (식후 한 잔)", latlng: [40.7589, -73.9847] },
         ]
       },
       {
@@ -383,7 +400,7 @@
         sub: '자연사박물관 → 양키스 경기',
         items: [
           { time: '10:00', title: 'AMNH 자연사 박물관', desc: '밤박물관 영화 배경. 공룡·블루웨일·다이아.', star: true, booked: '예매필요', latlng: [40.7813, -73.9740] },
-          { time: '12:30', title: 'Levain Bakery', desc: 'Upper West 쿠키 성지. 직경 10cm 두꺼운 쿠키.', latlng: [40.7790, -73.9803] },
+          { time: '12:30', title: 'Levain Bakery', desc: 'Upper West 쿠키 성지. 직경 10cm 두꺼운 쿠키.', nearby: 'Magnolia Bakery Columbus Ave 본점', latlng: [40.7790, -73.9803] },
           { time: '13:00', title: '센트럴파크 산책', desc: 'Bow Bridge, Bethesda Terrace 가볍게.', latlng: [40.7770, -73.9760] },
           { time: '14:00', title: 'Upper West 점심', desc: '캐주얼 카페에서 가볍게.', latlng: [40.7790, -73.9810] },
           { time: '15:30', title: '호텔 복귀', desc: '옷 갈아입기, 양키스 가기 전.', latlng: [40.7589, -73.9847] },
@@ -438,6 +455,7 @@
             <div class="title">${item.title}</div>
             <div class="desc">${item.desc}</div>
             ${item.booked ? `<span class="tag ${item.booked.includes('✅') ? 'booked' : ''}">${item.booked}</span>` : ''}
+            ${item.nearby ? `<div class="nearby">${item.nearby}</div>` : ''}
           </div>
         `;
         div.onclick = () => focusMarker(idx);
