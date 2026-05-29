@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>민대현 ♥ 남화수 결혼합니다</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── 리셋 & 기본 ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:      #fff9f5;
+      --rose:       #c8a4a4;
+      --rose-light: #e8d0d0;
+      --rose-dark:  #a07878;
+      --text:       #4a3f3f;
+      --text-light: #8a7070;
+      --gold:       #c4a882;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Serif KR', serif;
+      background: #f0e8e0;
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    /* ─── 최대 너비 래퍼 ─── */
+    .card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--cream);
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(100,60,60,.12);
+    }
+
+    /* ─── 상단 BGM 버튼 ─── */
+    #bgm-btn {
+      position: fixed;
+      top: 16px;
+      right: calc(50% - 228px);
+      z-index: 100;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1.5px solid var(--rose);
+      background: rgba(255,249,245,.92);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 12px rgba(200,164,164,.3);
+      transition: all .3s ease;
+    }
+    #bgm-btn:hover { background: var(--rose-light); }
+    #bgm-btn svg { width: 18px; height: 18px; fill: var(--rose-dark); }
+
+    @media (max-width: 480px) {
+      #bgm-btn { right: 16px; }
+    }
+
+    /* ─── 페이드인 애니메이션 ─── */
+    .fade-section {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+    .fade-section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── 꽃 라인 divider ─── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 32px 40px;
+    }
+    .divider::before,
+    .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--rose-light), transparent);
+    }
+    .divider-icon {
+      font-size: 14px;
+      color: var(--rose);
+      letter-spacing: 4px;
+    }
+
+    /* ══════════════════════════════════
+       1. 커버
+    ══════════════════════════════════ */
+    .cover {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 32px 60px;
+      overflow: hidden;
+    }
+
+    /* 배경 꽃 일러스트 (CSS) */
+    .flower-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    /* 꽃잎 공통 */
+    .petal {
+      position: absolute;
+      border-radius: 50% 0 50% 0;
+      opacity: .22;
+    }
+
+    /* 좌상단 큰 꽃 */
+    .petal.p1  { width:90px; height:90px; background:var(--rose); top:-20px; left:-20px; transform:rotate(15deg); }
+    .petal.p2  { width:70px; height:70px; background:var(--gold); top:20px; left:30px; transform:rotate(60deg); opacity:.18; }
+    .petal.p3  { width:50px; height:50px; background:var(--rose-light); top:-10px; left:55px; transform:rotate(130deg); }
+
+    /* 우상단 */
+    .petal.p4  { width:80px; height:80px; background:var(--rose); top:-15px; right:-15px; transform:rotate(-20deg); }
+    .petal.p5  { width:60px; height:60px; background:var(--gold); top:25px; right:35px; transform:rotate(-70deg); opacity:.18; }
+    .petal.p6  { width:45px; height:45px; background:var(--rose-light); top:-5px; right:60px; transform:rotate(-140deg); }
+
+    /* 좌하단 */
+    .petal.p7  { width:85px; height:85px; background:var(--rose); bottom:-20px; left:-20px; transform:rotate(200deg); }
+    .petal.p8  { width:65px; height:65px; background:var(--gold); bottom:20px; left:30px; transform:rotate(250deg); opacity:.18; }
+    .petal.p9  { width:50px; height:50px; background:var(--rose-light); bottom:-10px; left:55px; transform:rotate(310deg); }
+
+    /* 우하단 */
+    .petal.p10 { width:80px; height:80px; background:var(--rose); bottom:-18px; right:-18px; transform:rotate(-200deg); }
+    .petal.p11 { width:60px; height:60px; background:var(--gold); bottom:22px; right:32px; transform:rotate(-250deg); opacity:.18; }
+    .petal.p12 { width:48px; height:48px; background:var(--rose-light); bottom:-8px; right:58px; transform:rotate(-310deg); }
+
+    /* 중간 작은 꽃들 */
+    .flower-dot {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rose);
+      opacity: .35;
+    }
+    .flower-dot.d1  { top: 18%; left:  8%; }
+    .flower-dot.d2  { top: 22%; right: 10%; }
+    .flower-dot.d3  { top: 45%; left:  5%; }
+    .flower-dot.d4  { top: 48%; right:  6%; }
+    .flower-dot.d5  { top: 72%; left: 10%; }
+    .flower-dot.d6  { top: 75%; right:  9%; }
+    .flower-dot.d7  { top: 35%; left: 20%; width:4px; height:4px; }
+    .flower-dot.d8  { top: 60%; right: 18%; width:4px; height:4px; }
+
+    /* 줄기/잎 SVG 오버레이 */
+    .stem-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .12;
+      pointer-events: none;
+    }
+
+    .cover-label {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--rose-dark);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .cover-names {
+      font-size: 38px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 2px;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .cover-heart {
+      font-size: 20px;
+      color: var(--rose);
+      margin: 0 10px;
+    }
+
+    .cover-date {
+      margin-top: 24px;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--text-light);
+      font-weight: 300;
+    }
+
+    .cover-sub {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--rose);
+      letter-spacing: 2px;
+    }
+
+    /* 아래 스크롤 화살표 */
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      opacity: .5;
+      animation: bounce 2s infinite;
+    }
+    .scroll-hint span {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--text-light);
+    }
+    .scroll-hint svg { width:20px; height:20px; fill:none; stroke:var(--rose); stroke-width:1.5; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ══════════════════════════════════
+       2. 초대 문구
+    ══════════════════════════════════ */
+    .invite {
+      padding: 20px 40px 36px;
+      text-align: center;
+    }
+
+    .invite-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--rose-dark);
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .invite-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text-light);
+      line-height: 2.2;
+      word-break: keep-all;
+    }
+
+    .invite-body strong {
+      display: block;
+      font-weight: 500;
+      color: var(--text);
+      font-size: 15px;
+      margin-top: 12px;
+    }
+
+    /* ══════════════════════════════════
+       3. 혼주 소개
+    ══════════════════════════════════ */
+    .parents {
+      padding: 20px 32px 36px;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: var(--rose);
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .parents-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px 16px;
+    }
+
+    .parent-box {
+      background: #fff;
+      border: 1px solid var(--rose-light);
+      border-radius: 16px;
+      padding: 20px 12px;
+    }
+
+    .parent-box .role {
+      font-size: 11px;
+      letter-spacing: 2px;
+      color: var(--rose);
+      margin-bottom: 10px;
+    }
+
+    .parent-box .name-main {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .parent-box .name-parents {
+      font-size: 11.5px;
+      color: var(--text-light);
+      line-height: 1.9;
+      font-weight: 300;
+    }
+
+    /* ══════════════════════════════════
+       4. 예식 안내
+    ══════════════════════════════════ */
+    .ceremony {
+      padding: 20px 32px 36px;
+      text-align: center;
+    }
+
+    .ceremony-card {
+      background: #fff;
+      border: 1px solid var(--rose-light);
+      border-radius: 20px;
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ceremony-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(to right, var(--rose-light), var(--rose), var(--gold), var(--rose), var(--rose-light));
+    }
+
+    .ceremony-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px dashed var(--rose-light);
+      text-align: left;
+    }
+    .ceremony-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .ceremony-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--rose-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .ceremony-icon svg { width: 16px; height: 16px; fill: var(--rose-dark); }
+
+    .ceremony-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--rose);
+      margin-bottom: 4px;
+    }
+    .ceremony-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .ceremony-value small {
+      display: block;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    /* ══════════════════════════════════
+       5. 오시는 길
+    ══════════════════════════════════ */
+    .location {
+      padding: 20px 32px 36px;
+      text-align: center;
+    }
+
+    /* 약식 지도 (CSS 아트) */
+    .map-art {
+      width: 100%;
+      height: 160px;
+      background: #f5ede8;
+      border-radius: 16px;
+      border: 1px solid var(--rose-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 도로 표현 */
+    .map-art::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0; right: 0;
+      height: 24px;
+      background: rgba(255,255,255,.6);
+      transform: translateY(-50%);
+    }
+    .map-art::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 24px;
+      background: rgba(255,255,255,.6);
+      transform: translateX(-50%);
+    }
+
+    .map-pin {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .map-pin-circle {
+      width: 32px;
+      height: 32px;
+      border-radius: 50% 50% 50% 0;
+      background: var(--rose);
+      transform: rotate(-45deg);
+      box-shadow: 0 4px 12px rgba(200,164,164,.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .map-pin-circle::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #fff;
+      transform: rotate(45deg);
+    }
+    .map-pin-label {
+      margin-top: 6px;
+      font-size: 11px;
+      color: var(--rose-dark);
+      font-weight: 500;
+      letter-spacing: 1px;
+      background: rgba(255,249,245,.9);
+      padding: 2px 8px;
+      border-radius: 8px;
+    }
+
+    .kakao-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px;
+      background: #fee500;
+      color: #3c1e1e;
+      border: none;
+      border-radius: 12px;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: filter .2s;
+    }
+    .kakao-btn:hover { filter: brightness(.95); }
+    .kakao-btn svg { width: 20px; height: 20px; }
+
+    .transport {
+      background: #fff;
+      border: 1px solid var(--rose-light);
+      border-radius: 16px;
+      padding: 20px 20px;
+      text-align: left;
+    }
+
+    .transport-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--rose-light);
+      font-size: 13px;
+    }
+    .transport-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .transport-badge {
+      flex-shrink: 0;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 1px;
+    }
+    .badge-subway { background: #003499; color: #fff; }
+    .badge-bus    { background: #5bb025; color: #fff; }
+
+    .transport-text {
+      color: var(--text-light);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+    .transport-text strong { color: var(--text); font-weight: 500; }
+
+    /* ══════════════════════════════════
+       6. 마음 전하기
+    ══════════════════════════════════ */
+    .account {
+      padding: 20px 32px 36px;
+      text-align: center;
+    }
+
+    .account-desc {
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 300;
+      line-height: 2;
+      margin-bottom: 24px;
+      word-break: keep-all;
+    }
+
+    .account-box {
+      background: #fff;
+      border: 1px solid var(--rose-light);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .account-header {
+      background: linear-gradient(135deg, var(--rose-light), var(--rose));
+      padding: 12px 20px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #fff;
+      font-weight: 500;
+    }
+
+    .account-body {
+      padding: 20px;
+      text-align: left;
+    }
+
+    .account-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--rose-light);
+      font-size: 13px;
+    }
+    .account-row:last-child { border-bottom: none; }
+
+    .account-label { color: var(--text-light); font-weight: 300; font-size: 12px; }
+    .account-value { color: var(--text); font-weight: 500; letter-spacing: .5px; }
+
+    .copy-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--rose-light);
+      color: var(--rose-dark);
+      border: none;
+      border-radius: 8px;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 12px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .copy-btn:hover { background: var(--rose); color: #fff; }
+    .copy-btn svg { width: 12px; height: 12px; }
+
+    .placeholder-note {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 11px;
+      color: var(--rose);
+      background: #fff0f0;
+      border: 1px dashed var(--rose-light);
+      border-radius: 6px;
+      padding: 4px 12px;
+      letter-spacing: 1px;
+    }
+
+    /* ══════════════════════════════════
+       7. 푸터
+    ══════════════════════════════════ */
+    .footer {
+      padding: 36px 32px 48px;
+      text-align: center;
+      background: linear-gradient(to bottom, var(--cream), #f5e8e0);
+    }
+
+    .footer-date {
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+
+    .footer-names {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: 2px;
+    }
+    .footer-names .heart { color: var(--rose); margin: 0 8px; }
+
+    .footer-petal-row {
+      margin-top: 28px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      opacity: .3;
+    }
+    .footer-petal-row span {
+      font-size: 16px;
+    }
+
+    /* ─── 반응형: 매우 작은 화면 ─── */
+    @media (max-width: 360px) {
+      .cover-names { font-size: 30px; }
+      .parents-grid { grid-template-columns: 1fr; }
+      .ceremony-card { padding: 28px 16px; }
+      .account-body { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BGM 버튼 -->
+<button id="bgm-btn" aria-label="배경음악 재생/정지" title="배경음악">
+  <!-- 재생 아이콘 (기본) -->
+  <svg id="icon-play" viewBox="0 0 24 24">
+    <path d="M9 18V6l10 6-10 6z"/>
+  </svg>
+  <!-- 정지 아이콘 (재생 중) -->
+  <svg id="icon-pause" viewBox="0 0 24 24" style="display:none;">
+    <rect x="6" y="5" width="4" height="14" rx="1"/>
+    <rect x="14" y="5" width="4" height="14" rx="1"/>
+  </svg>
+</button>
+
+<div class="card">
+
+  <!-- ═══ 1. 커버 ═══ -->
+  <section class="cover">
+    <!-- 꽃 배경 -->
+    <div class="flower-bg">
+      <div class="petal p1"></div>
+      <div class="petal p2"></div>
+      <div class="petal p3"></div>
+      <div class="petal p4"></div>
+      <div class="petal p5"></div>
+      <div class="petal p6"></div>
+      <div class="petal p7"></div>
+      <div class="petal p8"></div>
+      <div class="petal p9"></div>
+      <div class="petal p10"></div>
+      <div class="petal p11"></div>
+      <div class="petal p12"></div>
+      <div class="flower-dot d1"></div>
+      <div class="flower-dot d2"></div>
+      <div class="flower-dot d3"></div>
+      <div class="flower-dot d4"></div>
+      <div class="flower-dot d5"></div>
+      <div class="flower-dot d6"></div>
+      <div class="flower-dot d7"></div>
+      <div class="flower-dot d8"></div>
+
+      <!-- 잎사귀 줄기 SVG -->
+      <svg class="stem-svg" viewBox="0 0 480 900" preserveAspectRatio="none">
+        <!-- 좌측 줄기 -->
+        <path d="M 60 900 Q 80 700 50 500 Q 30 350 70 200 Q 90 100 60 0"
+              fill="none" stroke="#c8a4a4" stroke-width="1.5"/>
+        <ellipse cx="50" cy="500" rx="30" ry="18" fill="#c8a4a4" transform="rotate(-30,50,500)"/>
+        <ellipse cx="68" cy="680" rx="28" ry="16" fill="#c8a4a4" transform="rotate(20,68,680)"/>
+        <ellipse cx="58" cy="300" rx="26" ry="15" fill="#c8a4a4" transform="rotate(-40,58,300)"/>
+        <!-- 우측 줄기 -->
+        <path d="M 420 900 Q 400 700 430 500 Q 450 350 410 200 Q 390 100 420 0"
+              fill="none" stroke="#c8a4a4" stroke-width="1.5"/>
+        <ellipse cx="430" cy="500" rx="30" ry="18" fill="#c8a4a4" transform="rotate(30,430,500)"/>
+        <ellipse cx="412" cy="680" rx="28" ry="16" fill="#c8a4a4" transform="rotate(-20,412,680)"/>
+        <ellipse cx="422" cy="300" rx="26" ry="15" fill="#c8a4a4" transform="rotate(40,422,300)"/>
+      </svg>
+    </div>
+
+    <p class="cover-label">Wedding Invitation</p>
+
+    <div class="cover-names">
+      민대현<span class="cover-heart">♥</span>남화수
+    </div>
+
+    <p class="cover-date">2026 · 07 · 12 Sunday</p>
+    <p class="cover-sub">오후 3시 10분 · 신도림 라마다 호텔</p>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══ 2. 초대 문구 ═══ -->
+  <div class="divider fade-section">
+    <span class="divider-icon">✦ ✦ ✦</span>
+  </div>
+
+  <section class="invite fade-section">
+    <p class="invite-title">— 초 대 합 니 다 —</p>
+    <p class="invite-body">
+      서로를 알아보는 데는 눈 한 번이면 충분했고<br/>
+      서로를 사랑하는 데는 그 후의 모든 날이 필요했습니다.<br/><br/>
+      두 사람이 하나가 되는 날,<br/>
+      소중한 분들을 모시고 작은 기쁨을 나누고자 합니다.<br/><br/>
+      <strong>부디 오셔서 자리를 빛내 주십시오.</strong>
+    </p>
+  </section>
+
+  <!-- ═══ 3. 혼주 소개 ═══ -->
+  <div class="divider fade-section">
+    <span class="divider-icon">✦ ✦ ✦</span>
+  </div>
+
+  <section class="parents fade-section">
+    <p class="section-title">Family</p>
+    <div class="parents-grid">
+      <div class="parent-box">
+        <p class="role">신 랑</p>
+        <p class="name-main">민 대 현</p>
+        <p class="name-parents">
+          아버지 민경구<br/>
+          어머니 권영란<br/>
+          의 차남
+        </p>
+      </div>
+      <div class="parent-box">
+        <p class="role">신 부</p>
+        <p class="name-main">남 화 수</p>
+        <p class="name-parents">
+          아버지 남기영<br/>
+          어머니 이현옥<br/>
+          의 차녀
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. 예식 안내 ═══ -->
+  <div class="divider fade-section">
+    <span class="divider-icon">✦ ✦ ✦</span>
+  </div>
+
+  <section class="ceremony fade-section">
+    <p class="section-title">Ceremony</p>
+    <div class="ceremony-card">
+
+      <div class="ceremony-item">
+        <div class="ceremony-icon">
+          <!-- 달력 아이콘 -->
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="8" y1="2" x2="8" y2="6" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="3" y1="10" x2="21" y2="10" fill="none" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ceremony-label">DATE</p>
+          <p class="ceremony-value">2026년 7월 12일
+            <small>일요일 오후 3시 10분</small>
+          </p>
+        </div>
+      </div>
+
+      <div class="ceremony-item">
+        <div class="ceremony-icon">
+          <!-- 위치 아이콘 -->
+          <svg viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ceremony-label">VENUE</p>
+          <p class="ceremony-value">신도림 라마다 호텔
+            <small>5층 세인트그레이스홀</small>
+          </p>
+        </div>
+      </div>
+
+      <div class="ceremony-item">
+        <div class="ceremony-icon">
+          <!-- 주소 아이콘 -->
+          <svg viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22" fill="#fff"/>
+          </svg>
+        </div>
+        <div>
+          <p class="ceremony-label">ADDRESS</p>
+          <p class="ceremony-value" style="font-size:14px;">서울 구로구 새말로 97
+            <small>신도림 라마다 호텔</small>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ 5. 오시는 길 ═══ -->
+  <div class="divider fade-section">
+    <span class="divider-icon">✦ ✦ ✦</span>
+  </div>
+
+  <section class="location fade-section">
+    <p class="section-title">Location</p>
+
+    <div class="map-art">
+      <div class="map-pin">
+        <div class="map-pin-circle"></div>
+        <p class="map-pin-label">신도림 라마다 호텔</p>
+      </div>
+    </div>
+
+    <a class="kakao-btn"
+       href="https://map.kakao.com/?q=신도림+라마다+호텔"
+       target="_blank"
+       rel="noopener noreferrer">
+      <!-- 카카오 말풍선 아이콘 -->
+      <svg viewBox="0 0 24 24" fill="#3c1e1e">
+        <path d="M12 3C6.477 3 2 6.701 2 11.25c0 2.863 1.676 5.393 4.236 6.942L5.25 21.75l4.188-2.156C10.253 19.857 11.117 20 12 20c5.523 0 10-3.701 10-8.75S17.523 3 12 3z"/>
+      </svg>
+      카카오맵으로 보기
+    </a>
+
+    <div class="transport">
+      <div class="transport-item">
+        <span class="transport-badge badge-subway">지하철</span>
+        <p class="transport-text">
+          <strong>1호선 · 2호선 신도림역</strong> 1번 출구에서<br/>
+          도보 약 5분
+        </p>
+      </div>
+      <div class="transport-item">
+        <span class="transport-badge badge-bus">버스</span>
+        <p class="transport-text">
+          <strong>신도림역</strong> 정류장 하차 후<br/>
+          도보 약 5분 (간선·지선 다수 정차)
+        </p>
+      </div>
+      <div class="transport-item">
+        <span class="transport-badge" style="background:var(--rose);color:#fff;">주차</span>
+        <p class="transport-text">
+          호텔 지하 주차장 이용 가능<br/>
+          <strong>예식 시간 혼잡 예상, 대중교통 권장</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. 마음 전하기 ═══ -->
+  <div class="divider fade-section">
+    <span class="divider-icon">✦ ✦ ✦</span>
+  </div>
+
+  <section class="account fade-section">
+    <p class="section-title">Gift</p>
+    <p class="account-desc">
+      참석이 어려우신 분들을 위해<br/>
+      마음을 전하실 수 있도록 안내드립니다.<br/>
+      소중한 마음 감사히 받겠습니다.
+    </p>
+
+    <!-- 신랑측 -->
+    <div class="account-box" style="margin-bottom:12px;">
+      <div class="account-header">신랑측 · 민대현</div>
+      <div class="account-body">
+        <div class="account-row">
+          <span class="account-label">은행</span>
+          <span class="account-value">— 추후 입력 —</span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">계좌번호</span>
+          <span class="account-value">— 추후 입력 —</span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">예금주</span>
+          <span class="account-value">민대현</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 신부측 -->
+    <div class="account-box">
+      <div class="account-header" style="background:linear-gradient(135deg,#d4b896,var(--gold));">신부측 · 남화수</div>
+      <div class="account-body">
+        <div class="account-row">
+          <span class="account-label">은행</span>
+          <span class="account-value">— 추후 입력 —</span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">계좌번호</span>
+          <span class="account-value">— 추후 입력 —</span>
+        </div>
+        <div class="account-row">
+          <span class="account-label">예금주</span>
+          <span class="account-value">남화수</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="placeholder-note">※ 계좌번호는 추후 업데이트 예정입니다</p>
+  </section>
+
+  <!-- ═══ 7. 푸터 ═══ -->
+  <div class="divider fade-section">
+    <span class="divider-icon">✦ ✦ ✦</span>
+  </div>
+
+  <footer class="footer fade-section">
+    <p class="footer-date">2026 · 07 · 12</p>
+    <p class="footer-names">
+      민대현 <span class="heart">♥</span> 남화수
+    </p>
+    <div class="footer-petal-row">
+      <span>✿</span><span>✾</span><span>❀</span><span>✾</span><span>✿</span>
+    </div>
+  </footer>
+
+</div><!-- /.card -->
+
+<script>
+  /* ── BGM 버튼 토글 ── */
+  const bgmBtn   = document.getElementById('bgm-btn');
+  const iconPlay  = document.getElementById('icon-play');
+  const iconPause = document.getElementById('icon-pause');
+  let playing = false;
+
+  bgmBtn.addEventListener('click', () => {
+    playing = !playing;
+    iconPlay.style.display  = playing ? 'none'  : 'block';
+    iconPause.style.display = playing ? 'block' : 'none';
+    // 실제 오디오 연결 시: audio.play() / audio.pause()
+  });
+
+  /* ── Intersection Observer 페이드인 ── */
+  const targets = document.querySelectorAll('.fade-section');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  targets.forEach(el => observer.observe(el));
+
+  /* ── 계좌 복사 버튼 (추후 계좌번호 입력 시 활성화) ── */
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const text = btn.dataset.account;
+      if (!text || text.includes('추후')) return;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = '복사됨 ✓';
+        setTimeout(() => { btn.textContent = orig; }, 1500);
+      });
+    });
+  });
+</script>
+</body>
+</html>
