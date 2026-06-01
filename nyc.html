@@ -306,6 +306,78 @@
       background: #ddd;
       border-radius: 3px;
     }
+
+    /* ─── 참고 리스트 섹션 ─── */
+    .ref-section {
+      margin-top: 60px;
+      padding: 32px 0;
+      border-top: 1px solid var(--color-ghost-border);
+    }
+    .ref-title {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 32px;
+      letter-spacing: -0.64px;
+      margin-bottom: 8px;
+    }
+    .ref-subtitle {
+      font-size: 14px;
+      color: var(--color-muted-ash);
+      margin-bottom: 32px;
+    }
+    .ref-block {
+      background: var(--color-paper-white);
+      border-radius: var(--radius-default);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .ref-block h3 {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+    .ref-block .ref-sub {
+      font-size: 13px;
+      color: var(--color-muted-ash);
+      margin-bottom: 16px;
+    }
+    .ref-block table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .ref-block th {
+      text-align: left;
+      padding: 8px 10px 8px 0;
+      font-weight: 700;
+      color: var(--color-midnight-ink);
+      border-bottom: 1px solid var(--color-ghost-border);
+      font-size: 12px;
+    }
+    .ref-block td {
+      padding: 10px 10px 10px 0;
+      border-bottom: 1px solid var(--color-ghost-border);
+      color: var(--color-muted-ash);
+      vertical-align: top;
+    }
+    .ref-block td.name {
+      font-weight: 700;
+      color: var(--color-midnight-ink);
+    }
+    .ref-block tr:last-child td {
+      border-bottom: none;
+    }
+    .ref-block .star-row td.name::after {
+      content: ' ⭐';
+    }
+
+    @media (max-width: 768px) {
+      .ref-title { font-size: 24px; }
+      .ref-block { padding: 16px; }
+      .ref-block table { font-size: 12px; }
+      .ref-block th, .ref-block td { padding: 6px 6px 6px 0; }
+    }
   </style>
 </head>
 <body>
@@ -325,6 +397,104 @@
           <div class="legend-item"><span class="legend-dot" style="background:#5757f8"></span>일반 일정</div>
           <div class="legend-item"><span class="legend-dot" style="background:#202020"></span>메인 이벤트</div>
         </div>
+      </div>
+    </div>
+
+    <!-- ─── 참고 리스트 섹션 ─── -->
+    <div class="ref-section">
+      <h2 class="ref-title">🍽️ 참고 리스트</h2>
+      <p class="ref-subtitle">현장에서 동선·취향에 맞게 선택 가능한 식당·바·룸서비스 옵션</p>
+
+      <!-- 칸쿤 호텔존 식당 -->
+      <div class="ref-block">
+        <h3>🏝️ 칸쿤 호텔존 식당 (7/18~7/20)</h3>
+        <div class="ref-sub">Canopy by Hilton (Km 12.5) 기준 / 1인 디너 평균 / ⭐ = 추천</div>
+        <table>
+          <thead>
+            <tr><th>식당</th><th>대표 메뉴·설명</th><th>거리</th><th>1인</th></tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4" style="background:#f5f5f5;font-weight:600;font-size:11px;padding:6px 10px;">🚶 도보권 (La Isla 인근)</td></tr>
+            <tr><td class="name">Cambalache</td><td>아르헨티나 화로 스테이크. 30년 노하우, 데일리 치미추리</td><td>도보 3분</td><td>$40</td></tr>
+            <tr class="star-row"><td class="name">Mamazzita</td><td>멕시칸 + 밤엔 DJ·라이브. <strong>7/18 도착날 추천</strong></td><td>도보 5분</td><td>$30</td></tr>
+            <tr><td class="name">Carajillo</td><td>컨템포러리 멕시칸 퓨전. 모던 트렌디</td><td>도보 5분</td><td>$35</td></tr>
+            <tr class="star-row"><td class="name">El Fish Fritanga</td><td>멕시칸 그릴 해산물 (생선구이·세비체·새우). <strong>7/20 추천</strong></td><td>도보 7분</td><td>$25</td></tr>
+            <tr><td class="name">La Habichuela Sunset</td><td>정통 멕시칸 fine dining. 라군뷰 야외</td><td>도보 5분</td><td>$40</td></tr>
+            <tr><td class="name">The Cheesecake Factory</td><td>미국 체인. 메뉴 다양·실패 없음</td><td>도보 3분</td><td>$25</td></tr>
+            <tr><td class="name">100% Natural</td><td>신선한 주스·샐러드·가벼운 멕시칸</td><td>도보 5분</td><td>$15</td></tr>
+
+            <tr><td colspan="4" style="background:#f5f5f5;font-weight:600;font-size:11px;padding:6px 10px;">🚖 우버 5~10분</td></tr>
+            <tr class="star-row"><td class="name">Harry's Prime Steakhouse</td><td>USDA Prime 스테이크하우스. 칸쿤 톱. <strong>7/19 추천</strong></td><td>Km 14.2 (1.7km)</td><td>$100</td></tr>
+            <tr><td class="name">Puerto Madero</td><td>아르헨티나 풀코스 스테이크 + 해산물</td><td>Km 14.1 (1.6km)</td><td>$60</td></tr>
+            <tr><td class="name">Lorenzillo's</td><td>카리브해 라이브 랍스터. 칸쿤 클래식</td><td>Km 10.5 (2km)</td><td>$75</td></tr>
+            <tr><td class="name">Casitas (Ritz-Carlton)</td><td>럭셔리 비치 디너. 모래사장 위 테이블</td><td>Km 13.5 (1km)</td><td>$125</td></tr>
+            <tr><td class="name">Crab House</td><td>해산물 캐주얼 (게·새우·랍스터)</td><td>Km 14.7 (2.2km)</td><td>$40</td></tr>
+            <tr><td class="name">Mocambo</td><td>해산물 캐주얼</td><td>Km 9.7 (2.8km)</td><td>$30</td></tr>
+            <tr><td class="name">Surfin' Burrito</td><td>멕시칸 부리토·타코 캐주얼. 현지인 사랑</td><td>Km 9.5 (3km)</td><td>$15</td></tr>
+            <tr><td class="name">Hooters</td><td>미국식 캐주얼 (윙·버거)</td><td>Km 9.5 (3km)</td><td>$20</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Arte 다이닝 -->
+      <div class="ref-block">
+        <h3>🏛️ Hotel Xcaret Arte 다이닝 (7/21~7/23)</h3>
+        <div class="ref-sub">Casa de los Artistas 게스트 = 모든 Arte + Fuego(Xcaret México) 접근 가능</div>
+
+        <p style="font-size:13px;font-weight:600;margin:8px 0 4px;">🌟 시그니처·디너 (예약 권장)</p>
+        <table>
+          <thead><tr><th>레스토랑</th><th>Casa</th><th>음식</th><th>운영</th></tr></thead>
+          <tbody>
+            <tr class="star-row"><td class="name">Kibi Kibi</td><td>Casa de los Artistas (전용)</td><td>멕시칸-레바논 (Roberto Solís). 디너: 랍스터 키비·양 라자냐</td><td>조 7-11:30 / 중 12:30-17 / 디 18-23</td></tr>
+            <tr class="star-row"><td class="name">Fuego</td><td>Xcaret México (Casa de los Artistas 접근)</td><td>라틴-지중해. 아르헨티나 스테이크·트러플 라비올리</td><td>조·중·디너</td></tr>
+            <tr class="star-row"><td class="name">Tah Xido</td><td>Casa del Patrón</td><td>일식·테판야끼 셰프 라이브 쇼</td><td>디너만</td></tr>
+            <tr><td class="name">Encanta</td><td>Casa de la Música</td><td>멕시칸 셰프 테이스팅 (미슐랭급)</td><td>디너만</td></tr>
+            <tr><td class="name">Chino Poblano</td><td>Casa del Patrón</td><td>아시안-멕시칸 퓨전 (Alvin Leung)</td><td>디너만</td></tr>
+            <tr><td class="name">Xaak</td><td>—</td><td>인터내셔널 fine</td><td>디너만</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:13px;font-weight:600;margin:16px 0 4px;">☕ 캐주얼·올데이 (예약 X, 워크인)</p>
+        <table>
+          <thead><tr><th>레스토랑</th><th>음식</th><th>분위기</th><th>운영</th></tr></thead>
+          <tbody>
+            <tr class="star-row"><td class="name">Cayuco</td><td>멕시칸·지중해</td><td>풀사이드·캐주얼. <strong>7/23 마지막 조식</strong></td><td>7-23</td></tr>
+            <tr><td class="name">Arenal</td><td>멕시칸 컴포트 (스테이크)</td><td>코브 야외</td><td>중 13-18 / 디 19-23</td></tr>
+            <tr><td class="name">Apapachoa</td><td>비건</td><td>Casa de la Paz 옥상 정글뷰</td><td>조·중·디너</td></tr>
+            <tr><td class="name">Las Cañadas</td><td>대형 부페</td><td>활기·다양</td><td>조·중·디너</td></tr>
+            <tr><td class="name">Pueblo del Río</td><td>부페</td><td>강변 야외</td><td>조·중·디너</td></tr>
+            <tr><td class="name">Mercado de San Juan</td><td>멕시칸 마켓</td><td>시장 컨셉</td><td>중·디너</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 야식·바·룸서비스 -->
+      <div class="ref-block">
+        <h3>🌙 Arte 야식·바·룸서비스</h3>
+        <div class="ref-sub">23시 이후 운영하는 바 + 24시간 룸서비스</div>
+
+        <p style="font-size:13px;font-weight:600;margin:8px 0 4px;">🍸 늦은 밤 바 (23시 이후 OK)</p>
+        <table>
+          <thead><tr><th>바</th><th>위치</th><th>운영</th><th>컨셉</th></tr></thead>
+          <tbody>
+            <tr class="star-row"><td class="name">El Deseo Speakeasy</td><td>Casa del Patrón</td><td>20:00~04:00</td><td>숨겨진 스피크이지. 23시 DJ. <strong>밖에 길거리 타코</strong></td></tr>
+            <tr><td class="name">La Bodega</td><td>Casa del Patrón</td><td>~새벽</td><td>메즈칼·테킬라리아. 정통 멕시칸 술</td></tr>
+            <tr><td class="name">Cantina VI.AI.PY</td><td>Casa del Patrón 옥상</td><td>늦게까지</td><td>활기·DJ·late-night 메뉴</td></tr>
+            <tr><td class="name">Kibi Kibi 바</td><td>Casa de los Artistas</td><td>~23:00</td><td>너네 전용 칵테일·디저트</td></tr>
+            <tr><td class="name">옥상 바</td><td>Casa de los Artistas 옥상</td><td>~24:00</td><td>일몰·야경 조용한 칵테일</td></tr>
+          </tbody>
+        </table>
+
+        <p style="font-size:13px;font-weight:600;margin:16px 0 4px;">🛎️ 룸서비스 (Casa de los Artistas 전용 메뉴)</p>
+        <table>
+          <tbody>
+            <tr><td class="name">운영</td><td colspan="3">24시간 무료 (All-Fun Inclusive 포함). Casa de los Artistas 전용 프리미엄 메뉴</td></tr>
+            <tr><td class="name">주문</td><td colspan="3">객실 TV / 전화 / 버틀러 왓츠앱</td></tr>
+            <tr><td class="name">일반 메뉴</td><td colspan="3">시저샐러드, 연어 베이글, 프렌치 토스트, 치즈케이크, 핫케이크</td></tr>
+            <tr><td class="name">멕시칸</td><td colspan="3">Chilaquiles (조식), Divorced Egg, 새우 피자, Lemon Pie</td></tr>
+            <tr><td class="name">신혼 팁</td><td colspan="3">체크인 시 컨시어지에 "신혼여행 — 웰컴 샴페인·과일 룸 세팅" 요청 (무료)</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
