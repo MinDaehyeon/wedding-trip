@@ -400,55 +400,10 @@
       </div>
     </div>
 
-    <!-- ─── 참고 리스트 섹션 ─── -->
-    <div class="ref-section">
-      <h2 class="ref-title">🍽️ 참고 리스트</h2>
-      <p class="ref-subtitle">현장에서 동선·취향에 맞게 선택 가능한 식당·바·룸서비스 옵션</p>
-
-      <!-- 예약 가이드 -->
-      <div class="ref-block">
-        <h3>📅 레스토랑 예약 가이드</h3>
-        <div class="ref-sub">미리 예약해야 하는 곳 / 워크인 가능한 곳 / Arte는 컨시어지</div>
-
-        <p style="font-size:13px;font-weight:600;margin:8px 0 4px;color:#dc2626;">🔴 지금 바로 (OpenTable·웹 즉시)</p>
-        <table>
-          <thead><tr><th>식당</th><th>날짜·시간</th><th>예약처</th></tr></thead>
-          <tbody>
-            <tr class="star-row"><td class="name">Gallagher's Steakhouse</td><td>7/14 화 17:30</td><td>OpenTable (6개월 전부터)</td></tr>
-            <tr class="star-row"><td class="name">Harry's Prime Steakhouse</td><td>7/19 일 19:30</td><td>OpenTable</td></tr>
-            <tr><td class="name">Mamazzita (선택)</td><td>7/18 토 20:00</td><td>OpenTable (워크인도 OK)</td></tr>
-          </tbody>
-        </table>
-
-        <p style="font-size:13px;font-weight:600;margin:16px 0 4px;color:#d97706;">🟡 알람 필수 (28일 룰)</p>
-        <table>
-          <tbody>
-            <tr class="star-row"><td class="name">Peter Luger</td><td colspan="2">7/16 목 20:00 · <strong>Resy 앱 · 6/18 (목) 23:00 KST = 미국 동부 10:00 AM 정각</strong></td></tr>
-          </tbody>
-        </table>
-
-        <p style="font-size:13px;font-weight:600;margin:16px 0 4px;color:#059669;">🏛️ Arte 레스토랑 (체크인 후 컨시어지에서 일괄)</p>
-        <table>
-          <tbody>
-            <tr><td class="name">Tah Xido</td><td colspan="2">7/21 17:30 풀 코스 (셰프 라이브 쇼)</td></tr>
-            <tr><td class="name">Fuego</td><td colspan="2">7/22 17:00 빠른 코스 (1.25h, set-menu pre-order)</td></tr>
-            <tr><td class="name">Kibi Kibi</td><td colspan="2">7/22 07:00 조식 / Casa de los Artistas 전용</td></tr>
-            <tr><td class="name">Cayuco</td><td colspan="2">7/23 09:00 조식 / 워크인 OK</td></tr>
-          </tbody>
-        </table>
-
-        <p style="font-size:13px;font-weight:600;margin:16px 0 4px;color:#6b7280;">🟢 워크인 가능 (예약 X)</p>
-        <table>
-          <tbody>
-            <tr><td class="name">뉴욕</td><td colspan="2">230 Fifth, Joe's Pizza, Katz's, Halal Guys, Ess-a-Bagel, Levain, Magnolia, Buvette, LOS TACOS, JG Melon, L'industrie</td></tr>
-            <tr><td class="name">칸쿤</td><td colspan="2">El Fish Fritanga, Cambalache, Carrajillo, Cheesecake Factory, 100% Natural</td></tr>
-          </tbody>
-        </table>
-
-        <p style="font-size:12px;color:#6b7280;margin-top:12px;line-height:1.6;">
-          💡 <strong>OpenTable 팁</strong>: 한국 휴대폰 가입 OK. 이름은 여권 영문. 노쇼 시 계정 잠금 → 못 가면 전날까지 취소. 예약 시 <strong>"honeymoon" 코멘트 추가</strong>하면 디저트 서비스·자리 업그레이드 가끔.
-        </p>
-      </div>
+    <!-- ─── 참고 리스트 섹션 (JS에서 'ref' 탭으로 표시) ─── -->
+    <div class="ref-section" id="refSection" style="display:none;">
+      <h2 class="ref-title">🍽️ 식당·바·룸서비스 참고</h2>
+      <p class="ref-subtitle">여행 중 현장에서 선택할 옵션</p>
 
       <!-- 칸쿤 호텔존 식당 -->
       <div class="ref-block">
@@ -723,6 +678,14 @@
           { time: '13:00', title: '칸쿤 공항 도착', desc: '체크인·멕시코 출국심사·보안·면세.', latlng: [21.0413, -86.8767] },
           { time: '16:00', title: '칸쿤 → 시애틀 ✈️', desc: '신혼여행 마지막 비행.', star: true, latlng: [21.0413, -86.8767] },
         ]
+      },
+      {
+        id: 'ref',
+        label: '🍽️ 식당·바',
+        title: '식당·바·룸서비스 참고',
+        sub: '여행 중 현장에서 동선·취향에 따라 선택',
+        isRef: true,
+        items: []
       }
     ];
 
@@ -745,6 +708,22 @@
 
     function renderSchedule() {
       const day = days.find(d => d.id === activeDay);
+      const layoutEl = document.querySelector('.layout');
+      const refSectionEl = document.getElementById('refSection');
+
+      if (day.isRef) {
+        // 참고 탭: 일정·지도 숨기고 ref-section 표시
+        layoutEl.style.display = 'none';
+        refSectionEl.style.display = 'block';
+        refSectionEl.style.marginTop = '0';
+        refSectionEl.style.borderTop = 'none';
+        refSectionEl.style.paddingTop = '0';
+        return;
+      } else {
+        layoutEl.style.display = 'grid';
+        refSectionEl.style.display = 'none';
+      }
+
       scheduleEl.innerHTML = `
         <div class="schedule-day-title">${day.title}</div>
         <div class="schedule-day-sub">${day.label} · ${day.sub}</div>
@@ -778,6 +757,7 @@
     function renderMarkers() {
       markersLayer.clearLayers();
       const day = days.find(d => d.id === activeDay);
+      if (day.isRef) return;
       const bounds = [];
 
       day.items.forEach((item, idx) => {
