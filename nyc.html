@@ -259,6 +259,25 @@
       font-weight: 600;
       color: var(--color-electric-violet);
     }
+    .schedule-content .links {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .schedule-content .links a {
+      display: inline-block;
+      padding: 3px 9px;
+      background: var(--color-cloud-canvas);
+      border: 1px solid var(--color-electric-violet);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--color-electric-violet);
+      text-decoration: none;
+      line-height: 1.4;
+    }
+    .schedule-content .links a:hover { background: var(--color-electric-violet); color: #fff; }
 
     .map-container {
       background: var(--color-paper-white);
@@ -645,14 +664,15 @@
         sub: 'MoMA · Summit · 야경버스 · 230 Fifth',
         items: [
           { time: '09:30', title: 'Ess-a-Bagel', desc: '뉴욕 정통 베이글 + 크림치즈. 줄 서는 곳.', nearby: 'Carnegie Diner — 클래식 미국식 다이너 (다른 옵션)', latlng: [40.7596, -73.9685] },
-          { time: '10:30', title: 'MoMA', desc: '현대미술관. 반 고흐 별이 빛나는 밤, 모네 수련.', star: true, booked: '✅현대카드 무료', latlng: [40.7614, -73.9776] },
+          { time: '10:30', title: 'MoMA', desc: '현대미술관. 반 고흐 별이 빛나는 밤, 모네 수련. ※현대카드 실물 + 여권 지참(디지털카드 불인정 사례 있음).', star: true, booked: '✅현대카드 무료', links: [{ url: 'https://www.moma.org/visit', label: '방문 안내 (운영시간·짐 규정)' }], latlng: [40.7614, -73.9776] },
           { time: '13:00', title: 'Halal Guys', desc: '뉴욕 길거리 푸드트럭의 시초. 치킨 오버 라이스.', nearby: 'Don Antonio 피자 · Juice Generation 쥬스 · 달라스 바베큐', latlng: [40.7615, -73.9802] },
-          { time: '13:45', title: '💵 ATM 달러 인출 ($400×2)', desc: 'Emigrant Savings Bank (333 Madison, Summit 도보 1분). 부부 각자 카드로 $400씩. 화면에 수수료 $0이면 진행, 수수료 뜨면 취소 → TD Bank(1500 Broadway, 호텔 옆, ~$3)로. "Convert to KRW?"는 무조건 거절.', latlng: [40.7527, -73.9790] },
-          { time: '14:00', title: 'Summit One Vanderbilt', fixed: true, desc: '거울방 전망대. 낮 자연광이 가장 예쁨.', star: true, booked: '✅예매완료', nearby: 'Magnolia Bakery 컵케이크 (호텔 가는 길)', latlng: [40.7530, -73.9777] },
+          { time: '13:45', title: '💵 ATM 달러 인출 ($400×2)', desc: 'Emigrant Savings Bank (333 Madison, Summit 도보 1분). 부부 각자 카드로 $400씩. 화면에 수수료 $0이면 진행, 수수료 뜨면 취소 → TD Bank(1500 Broadway, 호텔 옆, ~$3)로. "Convert to KRW?"는 무조건 거절.', links: [{ url: 'https://blog.naver.com/borazzang30/224341071648', label: '무료 ATM 실사용 후기' }], latlng: [40.7527, -73.9790] },
+          { time: '14:00', title: 'Summit One Vanderbilt', fixed: true, desc: '거울방 전망대. 낮 자연광이 가장 예쁨. ※바닥이 거울 — 치마 X, Air층은 양말 신고 입장.', star: true, booked: '✅예매완료', links: [{ url: 'https://summitov.com', label: '입장 팁·복장 안내' }], nearby: 'Magnolia Bakery 컵케이크 (호텔 가는 길)', latlng: [40.7530, -73.9777] },
           { time: '17:00', title: '호텔 (옷 갈아입기)', desc: '디너 전 호텔 잠깐.', latlng: [40.7589, -73.9847] },
-          { time: '17:30', title: "Gallagher's Steakhouse", fixed: true, desc: '1927년 오픈. dry-aging 통유리방. 호텔 도보 8분, 야경버스 픽업 도보 5분. ※당일 정오까지 OpenTable confirm 필수(미확정 시 테이블 풀림).', star: true, booked: '✅예약완료(7/14 5:30PM)', latlng: [40.7613, -73.9818] },
-          { time: '20:00', title: 'TopView 야경버스 (Live)', fixed: true, desc: '2층 오픈탑 더블데커. 브루클린 브릿지까지 1.5h.', star: true, booked: '✅예매완료', latlng: [40.7587, -73.9852] },
-          { time: '22:00', title: '230 Fifth 루프탑', desc: '엠파이어 정면 야경 보면서 칵테일.', booked: '✅예매완료', nearby: 'Shake Shack 본점 (매디슨스퀘어파크 옆)', latlng: [40.7437, -73.9874] },
+          { time: '17:30', title: "Gallagher's Steakhouse", fixed: true, desc: '1927년 오픈. dry-aging 통유리방. 호텔 도보 8분, 야경버스 픽업 도보 5분. ※당일 정오까지 OpenTable confirm 필수(미확정 시 테이블 풀림).', star: true, booked: '✅예약완료(7/14 5:30PM)', links: [{ url: 'https://www.gallaghersnysteakhouse.com', label: '공식 (메뉴 미리보기)' }], latlng: [40.7613, -73.9818] },
+          { time: '20:00', title: 'TopView 야경버스 (Live)', fixed: true, desc: '2층 오픈탑 더블데커. 브루클린 브릿지까지 1.5h. ※탑승 정류장 위치 당일 재확인.', star: true, booked: '✅예매완료', links: [{ url: 'https://topviewnyc.com', label: '탑승 위치 확인' }], latlng: [40.7587, -73.9852] },
+          { time: '22:00', title: '230 Fifth 루프탑', desc: '엠파이어 정면 야경 보면서 칵테일. ※스마트캐주얼 — 운동복·플립플랍 X.', booked: '✅예매완료', links: [{ url: 'https://www.230-fifth.com', label: '드레스코드·운영시간' }], nearby: 'Shake Shack 본점 (매디슨스퀘어파크 옆)', latlng: [40.7437, -73.9874] },
+
           { time: '23:30', title: '호텔 복귀', desc: '시차 첫날 마무리.', nearby: "Ellen's Stardust Diner — 노래하는 웨이터 야식 분위기 (호텔 도보)", latlng: [40.7589, -73.9847] },
         ]
       },
@@ -662,18 +682,18 @@
         title: 'Downtown · Lion King',
         sub: '자유의여신상 → 라이온킹 → Top of Rock 야경',
         items: [
-          { time: '07:30', title: '호텔 출발 → Battery Park', desc: '지하철 R/W (Times Sq → Whitehall St) ~30분. 여권 지참.', latlng: [40.7589, -73.9847] },
+          { time: '07:30', title: '호텔 출발 → Battery Park', desc: '지하철 R/W (Times Sq → Whitehall St) ~30분. 여권 지참. ※개찰구에 트래블월렛 카드 그냥 태그(OMNY) — 부부 각자 다른 카드로.', links: [{ url: 'https://omny.info', label: 'OMNY 결제 안내' }], latlng: [40.7589, -73.9847] },
           { time: '08:05', title: 'Battery Park 도착', desc: '카페·간식.', latlng: [40.7036, -74.0142] },
           { time: '08:30', title: '보안검색 (티켓 명시)', fixed: true, desc: '공항 수준 X-ray + 금속탐지. 유리병·셀카봉·삼각대 금지.', latlng: [40.7036, -74.0142] },
-          { time: '09:00', title: '자유의여신상 페리 출발 🗽', fixed: true, desc: 'Pedestal 215계단·박물관·셀프 가이드. 9시 슬롯 고정.', star: true, booked: '✅예매완료', latlng: [40.7036, -74.0142] },
+          { time: '09:00', title: '자유의여신상 페리 출발 🗽', fixed: true, desc: 'Pedestal 215계단·박물관·셀프 가이드. 9시 슬롯 고정.', star: true, booked: '✅예매완료', links: [{ url: 'https://www.cityexperiences.com/new-york/city-cruises/statue/', label: '탑승·보안검색 안내' }], latlng: [40.7036, -74.0142] },
           { time: '11:30', title: 'Battery Park 복귀', desc: '페리에서 내려서 다음 코스로.', nearby: '9/11 메모리얼 외부 · Charging Bull · Wall Street', latlng: [40.7036, -74.0142] },
-          { time: '12:30', title: "Katz's Delicatessen", desc: '영화 해리가 샐리를 만났을때. 파스트라미 샌드위치.', nearby: "차이나타운 Joe's Shanghai 수프덤플링 · Jing Fong 딤섬", latlng: [40.7223, -73.9874] },
+          { time: '12:30', title: "Katz's Delicatessen", desc: '영화 해리가 샐리를 만났을때. 파스트라미 샌드위치. ※입구에서 주는 티켓 절대 분실 금지(분실 시 $50) — 카운터 주문 후 티켓에 기록, 나갈 때 정산.', links: [{ url: 'https://katzsdelicatessen.com', label: '주문 방법' }], nearby: "차이나타운 Joe's Shanghai 수프덤플링 · Jing Fong 딤섬", latlng: [40.7223, -73.9874] },
           { time: '14:00', title: "Joe's Pizza", desc: '뉴욕 슬라이스 피자의 전설. $5 클래식. 소호 산책과 함께.', nearby: 'Prince Street Pizza · 소호 편집샵 거리', latlng: [40.7305, -74.0023] },
           { time: '15:30', title: 'Buvette (웨스트빌리지)', desc: '프랑스 비스트로·와인바. 캐주얼하게 한 잔.', nearby: '워싱턴스퀘어파크 · Magnolia Bakery 본점', latlng: [40.7330, -74.0038] },
           { time: '16:30', title: 'LOS TACOS No.1 + 첼시마켓', desc: '첼시마켓 안 멕시칸 타코 성지. 같이 하이라인 산책.', nearby: '리틀아일랜드 인공섬 공원', latlng: [40.7425, -74.0060] },
           { time: '18:00', title: '호텔 복귀', desc: '옷 갈아입기, 라이온킹 준비.', latlng: [40.7589, -73.9847] },
           { time: '19:00', title: '라이온킹 @ Minskoff', fixed: true, desc: '메자닌 Row C 118-119 (베스트 자리).', star: true, booked: '✅예매완료', latlng: [40.7585, -73.9852] },
-          { time: '22:00', title: 'Top of the Rock 야경', fixed: true, desc: '엠파이어 정면 야경. 라이온킹 도보 5분.', star: true, booked: '✅예매완료', latlng: [40.7587, -73.9787] },
+          { time: '22:00', title: 'Top of the Rock 야경', fixed: true, desc: '엠파이어 정면 야경. 라이온킹 도보 5분.', star: true, booked: '✅예매완료', links: [{ url: 'https://www.rockefellercenter.com/attractions/top-of-the-rock/', label: '입장 안내' }], latlng: [40.7587, -73.9787] },
         ]
       },
       {
@@ -690,7 +710,7 @@
           { time: '17:15', title: '스냅 장소로 이동', desc: '장소 미정 — DUMBO 추천(피터루거와 같은 브루클린, 우버 10분). 확정 시 동선 업데이트.', latlng: [40.7589, -73.9847] },
           { time: '18:00', title: '신혼 스냅 (18:00–20:00)', fixed: true, desc: '2시간 촬영. 일몰 20:27이라 골든아워~일몰 포함. DUMBO면 브루클린·맨해튼브리지 배경.', star: true, booked: '✅예약완료', latlng: [40.7589, -73.9847] },
           { time: '20:00', title: '우버 → 윌리엄스버그', desc: '스냅 종료 후 Peter Luger로. 장소에 따라 10~30분.', latlng: [40.7099, -73.9627] },
-          { time: '20:45', title: 'Peter Luger 디너', fixed: true, desc: '3대 스테이크. 현금만! 카드 X. 인생 포터하우스. 주방 21:30 마감 — 15분 전 도착 필수.', star: true, booked: '✅예약완료 (8:45PM)', latlng: [40.7099, -73.9627] },
+          { time: '20:45', title: 'Peter Luger 디너', fixed: true, desc: '3대 스테이크. 현금만! 신용카드 X. 인생 포터하우스. 주방 21:30 마감 — 15분 전 도착 필수. ※공식상 데빗카드는 받음 — 트래블월렛 되는지 현장 문의해볼 것(안 되면 현금 $350 봉투).', star: true, booked: '✅예약완료 (8:45PM)', links: [{ url: 'https://peterluger.com', label: '결제수단 FAQ' }], latlng: [40.7099, -73.9627] },
           { time: '22:15', title: '우버 → 호텔 (미드타운)', desc: 'Williamsburg → Times Square. 25분. 여유되면 타임스퀘어 야경 산책.', latlng: [40.7589, -73.9847] },
           { time: '22:45', title: '호텔 도착 · 마무리', desc: '풀데이 마무리.', latlng: [40.7589, -73.9847] },
         ]
@@ -701,13 +721,13 @@
         title: 'AMNH · Yankees',
         sub: '자연사박물관 → 양키스 경기',
         items: [
-          { time: '10:00', title: 'AMNH 자연사 박물관', desc: '밤박물관 영화 배경. 공룡·블루웨일·다이아.', star: true, booked: '✅예매완료', latlng: [40.7813, -73.9740] },
+          { time: '10:00', title: 'AMNH 자연사 박물관', desc: '밤박물관 영화 배경. 공룡·블루웨일·다이아.', star: true, booked: '✅예매완료', links: [{ url: 'https://www.amnh.org/plan-your-visit', label: '관람 동선·입장 안내' }], latlng: [40.7813, -73.9740] },
           { time: '12:30', title: 'Levain Bakery', desc: 'Upper West 쿠키 성지. 직경 10cm 두꺼운 쿠키.', nearby: 'Magnolia Bakery Columbus Ave 본점', latlng: [40.7790, -73.9803] },
           { time: '13:00', title: '센트럴파크 산책', desc: 'Bow Bridge, Bethesda Terrace 가볍게.', latlng: [40.7770, -73.9760] },
           { time: '14:00', title: 'Upper West 점심', desc: '캐주얼 카페에서 가볍게.', latlng: [40.7790, -73.9810] },
           { time: '15:30', title: '호텔 복귀', desc: '옷 갈아입기, 양키스 가기 전.', latlng: [40.7589, -73.9847] },
           { time: '17:30', title: '지하철 → Bronx', desc: '4호선 161 St-Yankee Stadium역. 40분.', latlng: [40.8276, -73.9259] },
-          { time: '19:05', title: '양키스 경기 ⚾', fixed: true, desc: 'Yankee Stadium. 핫도그·맥주 안에서.', star: true, booked: '✅티켓보유', latlng: [40.8296, -73.9262] },
+          { time: '19:05', title: '양키스 경기 ⚾', fixed: true, desc: 'Yankee Stadium. 핫도그·맥주 안에서. ※백팩 반입금지(작은 클러치·투명백만) + 티켓은 MLB Ballpark 앱에 미리 로그인.', star: true, booked: '✅티켓보유', links: [{ url: 'https://www.mlb.com/yankees/ballpark/information/security', label: '가방 규정 (백팩 X)' }], latlng: [40.8296, -73.9262] },
           { time: '22:30', title: '우버 호텔', desc: 'Bronx → 미드타운.', latlng: [40.7589, -73.9847] },
         ]
       },
@@ -737,7 +757,7 @@
         sub: '풀데이 보호구역 보트 투어',
         items: [
           { time: '06:00', title: '호텔 픽업', fixed: true, desc: '마이리얼트립 투어 픽업.', booked: '✅예매완료', latlng: [21.1213, -86.7572] },
-          { time: '09:00', title: '고래상어 스노클링 🦈', desc: '10~12m 고래상어와 함께 입수. 환경세 $20/인 현지 현금.', star: true, latlng: [21.4500, -86.7800] },
+          { time: '09:00', title: '고래상어 스노클링 🦈', desc: '10~12m 고래상어와 함께 입수. 환경세 $20/인 현지 현금. ※친환경(biodegradable) 선크림만 허용 — 일반 선크림은 입수 제한될 수 있음. 뱃멀미약 출발 30분 전 복용 추천.', star: true, latlng: [21.4500, -86.7800] },
           { time: '12:00', title: '이슬라 콘토이 🏝️', desc: '유네스코 생물권 보전지구. 하루 200명 제한.', star: true, latlng: [21.4800, -86.8000] },
           { time: '12:30', title: '콘토이 백사장 + 세비체 점심', desc: '무인 자연보호구역. 새 152종 서식지.', latlng: [21.4800, -86.8000] },
           { time: '16:00', title: '칸쿤 귀환', desc: 'Canopy 호텔로.', latlng: [21.1213, -86.7572] },
@@ -766,14 +786,14 @@
         sub: '이동 + 호텔 온전히 즐기기 + 테판 쇼 + 밤 어드벤처',
         items: [
           { time: '06:45', title: '한인택시 → Arte', fixed: true, desc: '약 1h. ※픽업 06:45로 조정 — 마이리얼트립 시간 변경 요청.', booked: '✅예매완료(시간조정)', latlng: [21.1213, -86.7572] },
-          { time: '07:45', title: 'Arte 도착', desc: '얼리 어라이벌 → 게스트서비스서 손목밴드 + 짐 보관 + 파크/시설 이용.', star: true, booked: '✅2박 올인', latlng: [20.5810, -87.1180] },
+          { time: '07:45', title: 'Arte 도착', desc: '얼리 어라이벌 → 게스트서비스서 손목밴드 + 짐 보관 + 파크/시설 이용. ※Xcaret World 앱 미리 설치 — 리조트 지도·셔틀 시간표·레스토랑 예약 전부 앱에서.', star: true, booked: '✅2박 올인', links: [{ url: 'https://www.hotelxcaretarte.com', label: '리조트 공식 (지도·시설)' }], latlng: [20.5810, -87.1180] },
           { time: '08:15', title: 'Kibi Kibi 웰컴 조식 🥞', desc: '도착 후 첫 끼. 성인동 전용 레스토랑에서 시작(체크인 전에도 시설 이용 가능). 셰프 Roberto Solís 유카탄-레바논.', star: true, latlng: [20.5810, -87.1180] },
           { time: '오전~오후', title: '리조트에서 휴식 🏝️', desc: '첫날은 파크 대신 호텔을 온전히 즐김. 인피니티 풀·해변·Casa de los Artistas 전용 시설.', star: true, latlng: [20.5810, -87.1180] },
           { time: '13:00', title: 'Arenal 점심 🌮', desc: '멕시칸(Baja-loa) 알라카르트, 코브 야외. 하나뿐인 리조트 점심은 뷔페 말고 여유로운 알라카르트로.', latlng: [20.5810, -87.1180] },
           { time: '15:00', title: 'Arte 체크인', desc: '정식 체크인·짐 정리. (얼리 어라이벌로 오전부터 시설은 이용 중)', latlng: [20.5810, -87.1180] },
           { time: '17:00', title: '옥상 바 일몰 칵테일 🍹', desc: 'Casa de los Artistas 전용 옥상 바. 일몰·야경.', latlng: [20.5810, -87.1180] },
           { time: '18:00', title: 'Tah Xido 테판야끼 🍣', fixed: true, desc: 'Casa del Patrón. 셰프 라이브 쇼. 드레스코드 Smart Casual. 18:00 확정 · 10분 전 도착.', star: true, booked: '✅확정', latlng: [20.5810, -87.1180] },
-          { time: '20:30', title: 'Xplor Fuego 🔥', desc: '예약 불필요. 호텔 셔틀 "La Despeinada" 25분 간격. 밤 짚라인·동굴 래프트·불쇼 (식사 X). 당일 컨디션 봐서 20:30~22:30.', star: true, latlng: [20.5810, -87.1180] },
+          { time: '20:30', title: 'Xplor Fuego 🔥', desc: '예약 불필요. 호텔 셔틀 "La Despeinada" 25분 간격. 밤 짚라인·동굴 래프트·불쇼 (식사 X). 당일 컨디션 봐서 20:30~22:30. ※아쿠아슈즈(짚라인 착지·동굴), 로커 있음, 안경은 스트랩 필수.', star: true, links: [{ url: 'https://www.xplor.travel', label: '준비물·운영시간' }], latlng: [20.5810, -87.1180] },
           { time: '23:00', title: 'El Deseo Speakeasy 🌙 (선택)', desc: 'Casa del Patrón. 숨겨진 스피크이지. 23시 DJ 시작. 밖에 길거리 타코 스탠드 야식.', latlng: [20.5810, -87.1180] },
         ]
       },
@@ -785,7 +805,7 @@
         items: [
           { time: '07:00', title: 'Mercado San Juan 조식 🍳', desc: '멕시칸·인터내셔널 뷔페. 종일 Xenotes 투어 전 든든하게. (Kibi Kibi는 오늘 저녁 디너로)', latlng: [20.5810, -87.1180] },
           { time: '08:40', title: 'Xenotes 셔틀 픽업', fixed: true, desc: '호텔 로비 픽업 확정(8:40, 2인). 음식 포함, 복귀 ~17:30. 로비 포이어 15분 전 대기.', booked: '✅확정 HTA278956', latlng: [20.5810, -87.1180] },
-          { time: '09:00', title: 'Xenotes 4 cenotes 🌊', desc: '리비에라 마야 정글의 개인 세노테 4곳(불·물·바람·땅). 세노테마다 래펠·짚라인·카약·스노클. 점심 포함. ※7/20 Ik Kil과 다른 장소.', star: true, latlng: [20.9000, -87.1000] },
+          { time: '09:00', title: 'Xenotes 4 cenotes 🌊', desc: '리비에라 마야 정글의 개인 세노테 4곳(불·물·바람·땅). 세노테마다 래펠·짚라인·카약·스노클. 점심 포함. ※7/20 Ik Kil과 다른 장소. 친환경 선크림만 허용, 수건·구명조끼 제공, 방수팩/고프로 추천.', star: true, links: [{ url: 'https://www.xenotes.com', label: '준비물 안내' }], latlng: [20.9000, -87.1000] },
           { time: '17:30', title: 'Arte 복귀 · 샤워', desc: '종일 어드벤처 마치고 리조트로. 샤워·환복 ~1h → 18:30 준비완료. 옥상 바 일몰 한 잔도 가능.', latlng: [20.5810, -87.1180] },
           { time: '19:30', title: 'Kibi Kibi 디너 🍽️', fixed: true, desc: 'Casa de los Artistas 전용(셰프 Roberto Solís). 유카탄-레바논 파인 — 랍스터 키비·양고기 시그니처. Xenotes 복귀(17:30) 역산해 19:30, 이동 없이 우리 카사에서. 19:30 확정 · 10분 전 도착. 노쇼 위약금 주의.', star: true, booked: '✅확정', latlng: [20.5810, -87.1180] },
           { time: '21:00', title: '옥상 바 · 리조트 밤 🍷', desc: 'Casa de los Artistas 전용 옥상 바·라운지. 다음날 출발 전 무리 없이 로맨틱하게. (Xoximilco·Fuego 대신 리조트 밤 선택)', latlng: [20.5810, -87.1180] },
@@ -865,6 +885,7 @@
             <div class="desc">${item.desc}</div>
             ${item.booked ? `<span class="tag ${item.booked.includes('✅') ? 'booked' : ''}">${item.booked}</span>` : ''}
             ${item.nearby ? `<div class="nearby">${item.nearby}</div>` : ''}
+            ${item.links ? `<div class="links">${item.links.map(l => `<a href="${l.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">🔗 ${l.label}</a>`).join('')}</div>` : ''}
           </div>
         `;
         div.onclick = () => focusMarker(idx);
