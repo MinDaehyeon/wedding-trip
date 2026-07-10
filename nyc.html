@@ -553,7 +553,7 @@
             <td style="padding:10px 8px;color:#555;">인천(ICN) T1<br>7/13(월) 21:30</td>
             <td style="padding:10px 8px;color:#555;">뉴어크(EWR) T-B<br>7/13(월) 22:30</td>
             <td style="padding:10px 8px;color:#202020;font-weight:700;">33A 남화수<br>33B 민대현</td>
-            <td style="padding:10px 8px;color:#888;">ADWDTR</td>
+            <td style="padding:10px 8px;color:#888;">ADWDTR<br><a href="docs/flight-0713-icn-ewr-min.pdf" style="color:#3264ff;">📎대현</a> <a href="docs/flight-0713-icn-ewr-nam.pdf" style="color:#3264ff;">📎화수</a></td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 8px 10px 0;font-weight:700;color:#202020;">7/18<br>뉴욕→칸쿤</td>
@@ -561,7 +561,7 @@
             <td style="padding:10px 8px;color:#555;">뉴욕(JFK) T5<br>7/18(토) 09:59</td>
             <td style="padding:10px 8px;color:#555;">칸쿤(CUN) T4<br>7/18(토) 13:05</td>
             <td style="padding:10px 8px;color:#aaa;">미배정</td>
-            <td style="padding:10px 8px;color:#888;">SADVXM</td>
+            <td style="padding:10px 8px;color:#888;">SADVXM<br><a href="docs/flight-0718-jfk-cun.pdf" style="color:#3264ff;">📎e티켓</a> <a href="docs/receipt-0718-jfk-cun-baggage.pdf" style="color:#3264ff;">📎영수증</a></td>
           </tr>
           <tr style="border-bottom:1px solid #f0f0f0;">
             <td style="padding:10px 8px 10px 0;font-weight:700;color:#202020;">7/23<br>칸쿤→시애틀<br><span style="font-weight:400;color:#888;">(SLC 경유)</span></td>
@@ -569,7 +569,7 @@
             <td style="padding:10px 8px;color:#555;">칸쿤(CUN) T3<br>7/23(목) 16:20<br><br>솔트레이크(SLC)<br>7/23(목) 22:45</td>
             <td style="padding:10px 8px;color:#555;">솔트레이크(SLC)<br>7/23(목) 20:09<br><br>시애틀(SEA)<br>7/23(목) 23:59</td>
             <td style="padding:10px 8px;color:#aaa;">미배정</td>
-            <td style="padding:10px 8px;color:#888;">GYCEFX</td>
+            <td style="padding:10px 8px;color:#888;">GYCEFX<br><a href="docs/flight-0723-cun-sea.pdf" style="color:#3264ff;">📎e티켓</a></td>
           </tr>
           <tr>
             <td style="padding:10px 8px 10px 0;font-weight:700;color:#202020;">7/24<br>시애틀→인천</td>
@@ -577,7 +577,7 @@
             <td style="padding:10px 8px;color:#555;">시애틀(SEA)<br>7/24(금) 13:20</td>
             <td style="padding:10px 8px;color:#555;">인천(ICN) T2<br><strong>7/25(토) 16:40</strong> <span style="color:#888;">(+1일)</span></td>
             <td style="padding:10px 8px;color:#202020;font-weight:700;">40A 남화수<br>40B 민대현</td>
-            <td style="padding:10px 8px;color:#888;">AF7SRD</td>
+            <td style="padding:10px 8px;color:#888;">AF7SRD<br><a href="docs/flight-0724-sea-icn.pdf" style="color:#3264ff;">📎e티켓</a></td>
           </tr>
         </tbody>
       </table>
@@ -653,7 +653,7 @@
         title: '도착',
         sub: 'Newark 도착 후 호텔 체크인',
         items: [
-          { time: '22:30', title: 'EWR 도착', fixed: true, desc: '뉴어크 리버티 국제공항. 한인택시로 호텔 이동.', star: true, latlng: [40.6925, -74.1687] },
+          { time: '22:30', title: 'EWR 도착', fixed: true, desc: '뉴어크 리버티 국제공항. 한인택시로 호텔 이동.', star: true, links: [{ url: 'docs/flight-0713-icn-ewr-min.pdf', label: '📎 항공권 대현' }, { url: 'docs/flight-0713-icn-ewr-nam.pdf', label: '📎 항공권 화수' }], latlng: [40.6925, -74.1687] },
           { time: '24:00', title: '파라마운트 타임스퀘어 체크인', desc: '5박 묵을 호텔. 타임스퀘어 한복판.', latlng: [40.7589, -73.9847] },
         ]
       },
@@ -667,11 +667,11 @@
           { time: '10:30', title: 'MoMA', desc: '현대미술관. 반 고흐 별이 빛나는 밤, 모네 수련. ※현대카드 실물 + 여권 지참(디지털카드 불인정 사례 있음).', star: true, booked: '✅현대카드 무료', links: [{ url: 'https://www.moma.org/visit', label: '방문 안내 (운영시간·짐 규정)' }], latlng: [40.7614, -73.9776] },
           { time: '13:00', title: 'Halal Guys', desc: '뉴욕 길거리 푸드트럭의 시초. 치킨 오버 라이스.', nearby: 'Don Antonio 피자 · Juice Generation 쥬스 · 달라스 바베큐', latlng: [40.7615, -73.9802] },
           { time: '13:45', title: '💵 ATM 달러 인출 ($400×2)', desc: 'Emigrant Savings Bank (333 Madison, Summit 도보 1분). 부부 각자 카드로 $400씩. 화면에 수수료 $0이면 진행, 수수료 뜨면 취소 → TD Bank(1500 Broadway, 호텔 옆, ~$3)로. "Convert to KRW?"는 무조건 거절.', links: [{ url: 'https://blog.naver.com/borazzang30/224341071648', label: '무료 ATM 실사용 후기' }], latlng: [40.7527, -73.9790] },
-          { time: '14:00', title: 'Summit One Vanderbilt', fixed: true, desc: '거울방 전망대. 낮 자연광이 가장 예쁨. ※바닥이 거울 — 치마 X, Air층은 양말 신고 입장.', star: true, booked: '✅예매완료', links: [{ url: 'https://summitov.com/faq/', label: '공식 FAQ (복장·입장 규정)' }], nearby: 'Magnolia Bakery 컵케이크 (호텔 가는 길)', latlng: [40.7530, -73.9777] },
+          { time: '14:00', title: 'Summit One Vanderbilt', fixed: true, desc: '거울방 전망대. 낮 자연광이 가장 예쁨. ※바닥이 거울 — 치마 X, Air층은 양말 신고 입장.', star: true, booked: '✅예매완료', links: [{ url: 'docs/ticket-0714-summit.pdf', label: '📎 입장권' }, { url: 'https://summitov.com/faq/', label: '공식 FAQ (복장·입장 규정)' }], nearby: 'Magnolia Bakery 컵케이크 (호텔 가는 길)', latlng: [40.7530, -73.9777] },
           { time: '17:00', title: '호텔 (옷 갈아입기)', desc: '디너 전 호텔 잠깐.', latlng: [40.7589, -73.9847] },
           { time: '17:30', title: "Gallagher's Steakhouse", fixed: true, desc: '1927년 오픈. dry-aging 통유리방. 호텔 도보 8분, 야경버스 픽업 도보 5분. ※당일 정오까지 OpenTable confirm 필수(미확정 시 테이블 풀림).', star: true, booked: '✅예약완료(7/14 5:30PM)', links: [{ url: 'https://www.gallaghersnysteakhouse.com', label: '공식 (메뉴 미리보기)' }], latlng: [40.7613, -73.9818] },
           { time: '20:00', title: 'TopView 야경버스 (Live)', fixed: true, desc: '2층 오픈탑 더블데커. 브루클린 브릿지까지 1.5h. ※탑승: Stop 1 Times Square North — 708 7th Ave, 47th St 교차로 (호텔 도보 4분). ⚠️티켓 코드만으론 탑승 불가 — 탑뷰 앱에서 날짜·시간 사전 예약 필수. QR은 탑승 24h 전 활성화(전날 확인). 15분 전(19:45) 도착, 선착순 탑승, 중도하차 불가.', star: true, booked: '✅예매완료', links: [{ url: 'https://maps.app.goo.gl/YkK7VSTnBx9PbN9WA', label: '탑승장소 구글맵 핀' }, { url: 'https://tamice.com/tickets/topview-nyc-skyline-night-tour?lang=ko', label: 'Tamice 이용방법 (앱 예약 절차)' }], latlng: [40.7599, -73.9834] },
-          { time: '22:00', title: '230 Fifth 루프탑', desc: '엠파이어 정면 야경 보면서 칵테일. ※스마트캐주얼 — 운동복·플립플랍 X.', booked: '✅예매완료', links: [{ url: 'https://www.230-fifth.com', label: '드레스코드·운영시간' }], nearby: 'Shake Shack 본점 (매디슨스퀘어파크 옆)', latlng: [40.7437, -73.9874] },
+          { time: '22:00', title: '230 Fifth 루프탑', desc: '엠파이어 정면 야경 보면서 칵테일. ※스마트캐주얼 — 운동복·플립플랍 X.', booked: '✅예매완료', links: [{ url: 'docs/ticket-0714-230fifth-1.jpg', label: '📎 티켓1' }, { url: 'docs/ticket-0714-230fifth-2.jpg', label: '📎 티켓2' }, { url: 'https://www.230-fifth.com', label: '드레스코드·운영시간' }], nearby: 'Shake Shack 본점 (매디슨스퀘어파크 옆)', latlng: [40.7437, -73.9874] },
 
           { time: '23:30', title: '호텔 복귀', desc: '시차 첫날 마무리.', nearby: "Ellen's Stardust Diner — 노래하는 웨이터 야식 분위기 (호텔 도보)", latlng: [40.7589, -73.9847] },
         ]
@@ -685,7 +685,7 @@
           { time: '07:30', title: '호텔 출발 → Battery Park', desc: '지하철 R/W (Times Sq → Whitehall St) ~30분. 여권 지참. ※개찰구에 트래블월렛 카드 그냥 태그(OMNY) — 부부 각자 다른 카드로.', links: [{ url: 'https://omny.info', label: 'OMNY 결제 안내' }], latlng: [40.7589, -73.9847] },
           { time: '08:05', title: 'Battery Park 도착', desc: '카페·간식.', latlng: [40.7036, -74.0142] },
           { time: '08:30', title: '보안검색 (티켓 명시)', fixed: true, desc: '공항 수준 X-ray + 금속탐지. 유리병·셀카봉·삼각대 금지.', latlng: [40.7036, -74.0142] },
-          { time: '09:00', title: '자유의여신상 페리 출발 🗽', fixed: true, desc: 'Pedestal 215계단·박물관·셀프 가이드. 9시 슬롯 고정.', star: true, booked: '✅예매완료', links: [{ url: 'https://www.cityexperiences.com/new-york/city-cruises/statue/', label: '탑승·보안검색 안내' }], latlng: [40.7036, -74.0142] },
+          { time: '09:00', title: '자유의여신상 페리 출발 🗽', fixed: true, desc: 'Pedestal 215계단·박물관·셀프 가이드. 9시 슬롯 고정.', star: true, booked: '✅예매완료', links: [{ url: 'docs/ticket-0715-statue-ferry.png', label: '📎 페리 티켓 QR' }, { url: 'https://www.cityexperiences.com/new-york/city-cruises/statue/', label: '탑승·보안검색 안내' }], latlng: [40.7036, -74.0142] },
           { time: '11:30', title: 'Battery Park 복귀', desc: '페리에서 내려서 다음 코스로.', nearby: '9/11 메모리얼 외부 · Charging Bull · Wall Street', latlng: [40.7036, -74.0142] },
           { time: '12:30', title: "Katz's Delicatessen", desc: '영화 해리가 샐리를 만났을때. 파스트라미 샌드위치. ※입구 티켓 분실 금지(분실 시 $50). 주문 요령: 웨이터석 말고 오른쪽 커터(cutter) 카운터로 → 커터 컵에 $1~2 팁을 먼저 보이게 넣고 "Pastrami on rye" → 자르면서 주는 맛보기 시식 → 티켓 들고 나갈 때 정산.', links: [{ url: 'https://mattweinberg.net/ordering-at-katzs-deli', label: '실전 주문 가이드 (커터 팁·라인 선택)' }], nearby: "차이나타운 Joe's Shanghai 수프덤플링 · Jing Fong 딤섬", latlng: [40.7223, -73.9874] },
           { time: '14:00', title: "Joe's Pizza", desc: '뉴욕 슬라이스 피자의 전설. $5 클래식. 소호 산책과 함께.', nearby: 'Prince Street Pizza · 소호 편집샵 거리', latlng: [40.7305, -74.0023] },
@@ -693,7 +693,7 @@
           { time: '16:30', title: 'LOS TACOS No.1 + 첼시마켓', desc: '첼시마켓 안 멕시칸 타코 성지. 같이 하이라인 산책.', nearby: '리틀아일랜드 인공섬 공원', latlng: [40.7425, -74.0060] },
           { time: '18:00', title: '호텔 복귀', desc: '옷 갈아입기, 라이온킹 준비.', latlng: [40.7589, -73.9847] },
           { time: '19:00', title: '라이온킹 @ Minskoff', fixed: true, desc: '메자닌 Row C 118-119 (베스트 자리).', star: true, booked: '✅예매완료', latlng: [40.7585, -73.9852] },
-          { time: '22:00', title: 'Top of the Rock 야경', fixed: true, desc: '엠파이어 정면 야경. 라이온킹 도보 5분.', star: true, booked: '✅예매완료', links: [{ url: 'https://www.rockefellercenter.com/attractions/top-of-the-rock/', label: '입장 안내' }], latlng: [40.7587, -73.9787] },
+          { time: '22:00', title: 'Top of the Rock 야경', fixed: true, desc: '엠파이어 정면 야경. 라이온킹 도보 5분.', star: true, booked: '✅예매완료', links: [{ url: 'docs/ticket-0715-top-of-the-rock.pdf', label: '📎 입장권' }, { url: 'https://www.rockefellercenter.com/attractions/top-of-the-rock/', label: '입장 안내' }], latlng: [40.7587, -73.9787] },
         ]
       },
       {
@@ -722,7 +722,7 @@
         sub: '자연사박물관 → 양키스 경기',
         items: [
           { time: '09:59', title: '✈️ JetBlue 온라인 체크인 오픈', desc: '내일(7/18) 칸쿤행 B61851 출발 정확히 24h 전 오픈(뉴욕시간). 박물관 입장 전 폰으로 2분 — 좌석 나란히 지정(체크인 시 무료). ⚠️사전 구매한 위탁수하물이 체크인 화면에 표시되는지 확인(전날 반영 예정) — 안 보이면 구매처 연락, 영수증 캡처 미리 준비.', star: true, latlng: [40.7813, -73.9740] },
-          { time: '10:00', title: 'AMNH 자연사 박물관', desc: '밤박물관 영화 배경. 공룡·블루웨일·다이아.', star: true, booked: '✅예매완료', links: [{ url: 'https://www.amnh.org/plan-your-visit', label: '관람 동선·입장 안내' }], latlng: [40.7813, -73.9740] },
+          { time: '10:00', title: 'AMNH 자연사 박물관', desc: '밤박물관 영화 배경. 공룡·블루웨일·다이아.', star: true, booked: '✅예매완료', links: [{ url: 'docs/ticket-0717-amnh.pdf', label: '📎 입장권' }, { url: 'https://www.amnh.org/plan-your-visit', label: '관람 동선·입장 안내' }], latlng: [40.7813, -73.9740] },
           { time: '12:30', title: 'Levain Bakery', desc: 'Upper West 쿠키 성지. 직경 10cm 두꺼운 쿠키.', nearby: 'Magnolia Bakery Columbus Ave 본점', latlng: [40.7790, -73.9803] },
           { time: '13:00', title: '센트럴파크 산책', desc: 'Bow Bridge, Bethesda Terrace 가볍게.', latlng: [40.7770, -73.9760] },
           { time: '14:00', title: 'Upper West 점심', desc: '캐주얼 카페에서 가볍게.', latlng: [40.7790, -73.9810] },
@@ -741,7 +741,7 @@
           { time: '05:30', title: '기상', desc: '짐은 전날 밤 정리 완료.', latlng: [40.7589, -73.9847] },
           { time: '06:30', title: '호텔 출발 → JFK (Uber)', desc: '토요일 새벽이라 교통 원활(~45분). ※전날 밤 Uber "Reserve"로 06:15~06:30 미리 예약 → 새벽 배차 확실. 짐 있어 지하철·공유셔틀 X.', latlng: [40.7589, -73.9847] },
           { time: '07:20', title: 'JFK Terminal 5 도착', desc: 'JetBlue 카운터. 보안검색.', latlng: [40.6446, -73.7858] },
-          { time: '09:59', title: 'JetBlue B61851 칸쿤행', fixed: true, desc: '약 4시간 비행.', star: true, latlng: [40.6446, -73.7858] },
+          { time: '09:59', title: 'JetBlue B61851 칸쿤행', fixed: true, desc: '약 4시간 비행.', star: true, links: [{ url: 'docs/flight-0718-jfk-cun.pdf', label: '📎 e티켓' }, { url: 'docs/receipt-0718-jfk-cun-baggage.pdf', label: '📎 영수증 (수하물 127,600원 증빙)' }], latlng: [40.6446, -73.7858] },
           { time: '13:05', title: '칸쿤 공항 도착 🇲🇽', desc: '입국 + FMM 관광카드.', star: true, latlng: [21.0413, -86.8767] },
           { time: '13:30', title: '칸쿤자유여행 픽업택시', fixed: true, desc: '공항 → Canopy by Hilton (옵션1 공항↔호텔존).', booked: '✅예매완료', latlng: [21.0413, -86.8767] },
           { time: '15:00', title: 'Canopy by Hilton 체크인', desc: '호텔존 Km 12.5. La Isla 쇼핑몰 옆. 짐 풀고 샤워.', star: true, booked: '✅3박', latlng: [21.1213, -86.7572] },
@@ -787,7 +787,7 @@
         sub: '이동 + 호텔 온전히 즐기기 + 테판 쇼 + 밤 어드벤처',
         items: [
           { time: '06:45', title: '한인택시 → Arte', fixed: true, desc: '약 1h. ※픽업 06:45로 조정 — 마이리얼트립 시간 변경 요청.', booked: '✅예매완료(시간조정)', latlng: [21.1213, -86.7572] },
-          { time: '07:45', title: 'Arte 도착', desc: '얼리 어라이벌 → 게스트서비스서 손목밴드 + 짐 보관 + 파크/시설 이용. ※Xcaret World 앱 미리 설치 — 리조트 지도·셔틀 시간표·레스토랑 예약 전부 앱에서.', star: true, booked: '✅2박 올인', links: [{ url: 'https://www.hotelxcaretarte.com', label: '리조트 공식 (지도·시설)' }], latlng: [20.5810, -87.1180] },
+          { time: '07:45', title: 'Arte 도착', desc: '얼리 어라이벌 → 게스트서비스서 손목밴드 + 짐 보관 + 파크/시설 이용. ※Xcaret World 앱 미리 설치 — 리조트 지도·셔틀 시간표·레스토랑 예약 전부 앱에서.', star: true, booked: '✅2박 올인', links: [{ url: 'docs/voucher-0721-xcaret-arte.pdf', label: '📎 예약 바우처' }, { url: 'https://www.hotelxcaretarte.com', label: '리조트 공식 (지도·시설)' }], latlng: [20.5810, -87.1180] },
           { time: '08:15', title: 'Kibi Kibi 웰컴 조식 🥞', desc: '도착 후 첫 끼. 성인동 전용 레스토랑에서 시작(체크인 전에도 시설 이용 가능). 셰프 Roberto Solís 유카탄-레바논.', star: true, latlng: [20.5810, -87.1180] },
           { time: '오전~오후', title: '리조트에서 휴식 🏝️', desc: '첫날은 파크 대신 호텔을 온전히 즐김. 인피니티 풀·해변·Casa de los Artistas 전용 시설.', star: true, latlng: [20.5810, -87.1180] },
           { time: '13:00', title: 'Arenal 점심 🌮', desc: '멕시칸(Baja-loa) 알라카르트, 코브 야외. 하나뿐인 리조트 점심은 뷔페 말고 여유로운 알라카르트로.', latlng: [20.5810, -87.1180] },
@@ -825,7 +825,7 @@
           { time: '10:00', title: '옥상 인피니티 풀·옥상 바', desc: 'Casa de los Artistas 전용 시설 마지막.', latlng: [20.5810, -87.1180] },
           { time: '11:45', title: 'Arte 체크아웃 · 공항 트랜스퍼 픽업', fixed: true, desc: '호텔→칸쿤공항 셔틀 확정(픽업 11:45, 2인). 로비 포이어 15분 전 대기. 약 1h 이동, 공항 3h 전 도착. 체크아웃일 시설은 18:00까지 이용 가능.', booked: '✅확정 337012270', latlng: [20.5810, -87.1180] },
           { time: '13:00', title: '칸쿤 공항(CUN) T3 도착', desc: '체크인·멕시코 출국심사·보안·면세.', latlng: [21.0413, -86.8767] },
-          { time: '16:20', title: '칸쿤 → 시애틀 ✈️ (델타 DL647)', fixed: true, desc: '델타항공 DL647. CUN T3 16:20 → 솔트레이크시티(SLC) 20:09 도착. 경유 후 DL2998로 22:45 → 시애틀(SEA) 23:59 도착. 신혼여행 마지막 비행.', star: true, latlng: [21.0413, -86.8767] },
+          { time: '16:20', title: '칸쿤 → 시애틀 ✈️ (델타 DL647)', fixed: true, desc: '델타항공 DL647. CUN T3 16:20 → 솔트레이크시티(SLC) 20:09 도착. 경유 후 DL2998로 22:45 → 시애틀(SEA) 23:59 도착. 신혼여행 마지막 비행.', star: true, links: [{ url: 'docs/flight-0723-cun-sea.pdf', label: '📎 e티켓 (시애틀행)' }, { url: 'docs/flight-0724-sea-icn.pdf', label: '📎 e티켓 (인천행 KE042)' }], latlng: [21.0413, -86.8767] },
         ]
       },
       {
