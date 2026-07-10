@@ -130,6 +130,7 @@
         top: 56px;
         padding: 8px;
       }
+      .map-toggle { display: block; }
       #map {
         height: 38vh;
         min-height: 280px;
@@ -286,6 +287,25 @@
       position: sticky;
       top: 20px;
     }
+    .map-toggle {
+      display: none;
+      width: 100%;
+      border: 1px solid var(--color-electric-violet);
+      background: var(--color-paper-white);
+      color: var(--color-electric-violet);
+      font-weight: 600;
+      font-size: 13px;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+    .map-container.collapsed #map,
+    .map-container.collapsed .legend { display: none; }
+    .map-container.collapsed .map-toggle { margin-bottom: 0; }
+    @media (max-width: 768px) {
+      .map-toggle { display: block; }
+    }
     #map {
       width: 100%;
       height: calc(100vh - 240px);
@@ -424,7 +444,8 @@
 
     <div class="layout">
       <div class="schedule scrollbar" id="schedule"></div>
-      <div class="map-container">
+      <div class="map-container" id="mapContainer">
+        <button class="map-toggle" id="mapToggle" onclick="toggleMap()">🗺️ 지도 접기</button>
         <div id="map"></div>
         <div class="legend">
           <div class="legend-item"><span class="legend-dot" style="background:#5757f8"></span>일반 일정</div>
@@ -850,7 +871,7 @@
         const btn = document.createElement('button');
         btn.className = 'day-tab' + (d.id === activeDay ? ' active' : '');
         btn.textContent = d.label;
-        btn.onclick = () => { activeDay = d.id; render(); };
+        btn.onclick = () => { activeDay = d.id; render(); scrollToContent(); };
         tabsEl.appendChild(btn);
       });
     }
@@ -952,8 +973,27 @@
       renderMarkers();
     }
 
+    function scrollToContent() {
+      if (window.innerWidth > 768) return;
+      const day = days.find(d => d.id === activeDay);
+      const target = day.isRef ? document.getElementById('refSection') : scheduleEl;
+      const y = target.getBoundingClientRect().top + window.scrollY - 64;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+    function toggleMap() {
+      const c = document.getElementById('mapContainer');
+      const collapsed = c.classList.toggle('collapsed');
+      document.getElementById('mapToggle').textContent = collapsed ? '🗺️ 지도 펼치기' : '🗺️ 지도 접기';
+      try { localStorage.setItem('mapCollapsed', collapsed ? '1' : '0'); } catch (e) {}
+      if (!collapsed && map) setTimeout(() => map.invalidateSize(), 50);
+    }
+
     initMap();
     render();
+    try {
+      if (localStorage.getItem('mapCollapsed') === '1' && window.innerWidth <= 768) toggleMap();
+    } catch (e) {}
   </script>
 </body>
 </html>
